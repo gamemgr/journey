@@ -42,11 +42,11 @@ GO
 -- ==========================================================================================
 CREATE TABLE [dbo].[T_Maintenance]
 (
-	[State]				INT				NOT NULL,						-- 서버 상태 [ 0 : On, 1 : Off ]
+    [State]             INT             NOT NULL,                       -- 서버 상태 [ 0 : On, 1 : Off ]
 
-	[Version]			INT				NOT NULL DEFAULT(0),			-- 서버 버전 [ 클라이언트와 버전이 맞지 않을경우 로그인 불가 ]
+    [Version]           INT             NOT NULL DEFAULT(0),            -- 서버 버전 [ 클라이언트와 버전이 맞지 않을경우 로그인 불가 ]
 
-	[EndTime]			SMALLDATETIME	NULL,							-- 서버 상태 Off 일 경우 점검 종료 시간.
+    [EndTime]           SMALLDATETIME   NULL,                           -- 서버 상태 Off 일 경우 점검 종료 시간.
 )
 GO
 
