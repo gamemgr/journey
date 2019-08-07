@@ -34,8 +34,8 @@ IF EXISTS (SELECT * FROM SYS.OBJECTS WHERE name = 'T_Key' AND TYPE = 'U')
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Maintenance
+-- Type         : Table
+-- ID           : T_Maintenance
 -- DESC         : 점검 테이블
 -- Author       : gmlee
 -- Modify       :
@@ -54,8 +54,8 @@ INSERT INTO [dbo].[T_Maintenance]([State], [Version], [EndTime])
 VALUES(0, 1, GETDATE())
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Error
+-- Type         : Table
+-- ID           : T_Error
 -- DESC         : 에러 테이블 [ Procedure Error ]
 -- Author       : gmlee
 -- Modify       :
@@ -79,11 +79,10 @@ CREATE TABLE [dbo].[T_Error]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_TestAccount
+-- Type         : Table
+-- ID           : T_TestAccount
 -- DESC         : Test 계정 테이블
--- Author       : 이광민
--- Date         : 2018-05-31 / 최초작성
+-- Author       : gmlee
 -- Modify       :
 -- ==========================================================================================
 CREATE TABLE [dbo].[T_TestAccount]
@@ -100,8 +99,8 @@ CREATE TABLE [dbo].[T_TestAccount]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Account
+-- Type         : Table
+-- ID           : T_Account
 -- DESC         : 계정 테이블
 -- Author       : gmlee
 -- Modify       :
@@ -138,8 +137,8 @@ CREATE UNIQUE NONCLUSTERED INDEX [NIX_T_Account_LoginId] ON [dbo].[T_Account]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_User
+-- Type         : Table
+-- ID           : T_User
 -- DESC         : 유저 테이블
 -- Author       : gmlee
 -- Modify       :
@@ -188,8 +187,8 @@ CREATE UNIQUE NONCLUSTERED INDEX [NIX_T_User_Nick] ON [dbo].[T_User]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Material
+-- Type         : Table
+-- ID           : T_Material
 -- DESC         : 재료 테이블
 -- Author       : gmlee
 -- Modify       :
@@ -211,8 +210,8 @@ CREATE TABLE [dbo].[T_Material]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Item
+-- Type         : Table
+-- ID           : T_Item
 -- DESC         : 아이템 테이블
 -- Author       : gmlee
 -- Modify       :
@@ -238,8 +237,8 @@ CREATE TABLE [dbo].[T_Item]
 GO
 
 -- ==========================================================================================
--- Type			: Table
--- ID			: T_Key
+-- Type         : Table
+-- ID           : T_Key
 -- DESC         : 열쇠 (시간재화) 테이블
 -- Author       : gmlee
 -- Modify       :
