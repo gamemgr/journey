@@ -7,11 +7,13 @@ const common = require('../lib/common');
 
 handles.user.load = async (data) => {
     const result = await mssql.P_User_Load(data.accUid);
+    if (result.err) throw result.err;
+    
     let res = [];
 
-    for(const o in result.success.recordsets) {
-        const recordSets = result.success.recordsets[o];
-        const name = common.tableName(Number(o));
+    for(const i in result.success.recordsets) {
+        const recordSets = result.success.recordsets[i];
+        const name = common.tableName(Number(i));
 
         res.push({table: name, data: recordSets});        
     }

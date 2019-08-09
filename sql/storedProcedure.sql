@@ -200,7 +200,46 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 
 BEGIN TRY
 
-    SELECT [Nick], [Icon], [Title], [Level], [Exp], [Gold], [Jewel], [HonorPT], [GuildPT], [ItemInventory], [Tutorial], [StageId], [GuildUid], [InitTime]
+    SELECT [Nick], [Icon], [Title], [Level], [Exp], [Gold], [Cash], [RCash], [HonorPT], [GuildPT], [ItemInventory], [Tutorial], [StageId], [GuildUid], [InitTime]
+    FROM [dbo].[T_User] WITH (NOLOCK)
+    WHERE [AccUid] = @AccUid
+
+    SELECT [ItemUid], [Id], [Enchant], [Count]
+    FROM [dbo].[T_Item] WITH (NOLOCK)
+    WHERE [AccUid] = @AccUid
+
+    SELECT [Id], [Count], [MaxTime]
+    FROM [dbo].[T_Key] WITH (NOLOCK)
+    WHERE [AccUid] = @AccUid
+
+    RETURN 0
+END TRY
+BEGIN CATCH
+    EXECUTE [P_Error_Insert]
+    RETURN 99999999
+END CATCH
+GO
+
+-- ==========================================================================================
+-- Program Type : Stored Procedure
+-- Program ID   : [P_Hero_Collocate]
+-- DESC         : Hero Collocate
+-- Author       : gmlee
+-- ==========================================================================================
+CREATE PROCEDURE [dbo].[P_Hero_Collocate]
+    @AccUid				INT							-- T_Account PK
+AS
+
+SET NOCOUNT ON
+SET LOCK_TIMEOUT 3000
+SET XACT_ABORT ON
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+
+BEGIN TRY
+
+    
+
+    SELECT [Nick], [Icon], [Title], [Level], [Exp], [Gold], [Cash], [RCash], [HonorPT], [GuildPT], [ItemInventory], [Tutorial], [StageId], [GuildUid], [InitTime]
     FROM [dbo].[T_User] WITH (NOLOCK)
     WHERE [AccUid] = @AccUid
 
