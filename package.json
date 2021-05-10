@@ -14,7 +14,7 @@
     "express-asyncify": "^1.0.0",
     "express-session": "^1.16.2",
     "ioredis": "^4.14.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "mssql": "^5.1.0",
     "request": "^2.88.0",
